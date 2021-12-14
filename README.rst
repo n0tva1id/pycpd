@@ -55,6 +55,6 @@ Each registration method is contained within a single class inside the ``pycpd``
 
 .. code-block:: bash
 
- python examples/fish_{Transform}_{Dimension}.py
+ python examples/cadc_deformable_3D.py
 
 where ``Transform`` is either ``rigid``, ``affine`` or ``deformable`` and ``Dimension`` is either ``2D`` or ``3D``. Note that examples are meant to be run from the ``root`` folder.
