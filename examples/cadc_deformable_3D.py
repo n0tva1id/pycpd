@@ -22,10 +22,10 @@ def main():
         # # synthetic data, equaivalent to X + 1
         # Y = np.loadtxt('data/bunny_source.txt')
     pcl_a = np.fromfile(
-        "/Users/exthardwaremac/Desktop/cadc_seq/0000000000.bin", dtype=np.float32).reshape((-1, 4))
+        "data/cadc_seq/0000000000.bin", dtype=np.float32).reshape((-1, 4))
 
     pcl_b = np.fromfile(
-        "/Users/exthardwaremac/Desktop/cadc_seq/0000000004.bin", dtype=np.float32).reshape((-1, 4))
+        "data/cadc_seq/0000000004.bin", dtype=np.float32).reshape((-1, 4))
 
     max_length = min(pcl_a.shape[0], pcl_b.shape[0])
 
