@@ -70,7 +70,12 @@ class AffineRegistration(EMRegistration):
 
         """
         if Y is None:
+            # print('Original TY is: {}'.format(self.TY))
+            print('B is: {}'.format(self.B))
+            print('t is: {}'.format(self.t))
+            print('M is: {}'.format(self.M))
             self.TY = np.dot(self.Y, self.B) + np.tile(self.t, (self.M, 1))
+            # print('New TY is: {}'.format(self.TY))
             return
         else:
             return np.dot(Y, self.B) + np.tile(self.t, (Y.shape[0], 1))

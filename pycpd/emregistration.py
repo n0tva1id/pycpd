@@ -143,11 +143,17 @@ class EMRegistration(object):
         self.PX = np.zeros((self.M, self.D))
         self.Np = 0
 
+    # Only triggered once.
     def register(self, callback=lambda **kwargs: None):
+        
         self.transform_point_cloud()
         while self.iteration < self.max_iterations and self.diff > self.tolerance:
+            # iterate will call expectation and maximization, and maximaization will call update_transform
             self.iterate()
             if callable(callback):
+                # print('X:', self.X)
+                # print('Y:', self.Y)
+                # print('TY:', self.TY)
                 kwargs = {'iteration': self.iteration,
                           'error': self.q, 'X': self.X, 'Y': self.TY}
                 callback(**kwargs)
